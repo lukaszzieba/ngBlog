@@ -1,0 +1,14 @@
+{
+  "name": "ngBlog",
+  "authors": [
+    "Finch <lukaszzieba4@gmail.com>"
+  ],
+  "description": "ng blog app",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5"
+  }
+}

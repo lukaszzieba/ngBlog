@@ -1,0 +1,9 @@
+{
+  "name": "app name",
+  "dependencies": {},
+  "devDependencies": {},
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160509150441",
+    "angular-route": "registry:dt/angular-route#1.3.0+20160317120654"
+  }
+}
