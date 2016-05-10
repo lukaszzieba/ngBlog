@@ -5,8 +5,14 @@
         .module('app')
         .config(config);
 
-    config.$inject = ['$routeProvider'];
-    function config($routeProvder) {
-       
+    config.$inject = ['$locationProvider', '$routeProvider'];
+    function config($locationProvider, $routeProvder) {
+        // $locationProvider.html5Mode(true);
+        $routeProvder
+            .when('/', {
+                templateUrl: './app/home/home.html',
+                controller: 'HomeController',
+                controllerAs: 'vm'
+            });
     }
 })();

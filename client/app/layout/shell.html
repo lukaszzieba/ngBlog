@@ -3,24 +3,9 @@
         <div ng-include="'./app/layout/nav-bar.html'"></div>
     </header>
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Hello on ngBlog</h1>
-            <p>
-                <h1>{{vm.test}}
-                    <small>asd</small>
-                </h1>
-            </p>
-        </div>
-        <div class="jumbotron">
-            <h1>Hello on ngBlog</h1>
-            <p>
-                <h1>{{vm.test}}
-                    <small>asd</small>
-                </h1>
-            </p>
-        </div>
+    <div class="container myContainer">        
+        <ng-view></ng-view>
     </div>
-    
+
     <div ng-include="'./app/layout/footer.html'"></div>
 </div>
