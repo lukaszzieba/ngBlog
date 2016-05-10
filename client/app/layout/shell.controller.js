@@ -3,19 +3,19 @@
 
     angular
         .module('app')
-        .controller('ShellController', ShellController);        
+        .controller('ShellController', ShellController);
 
-    ShellController.$inject = [];
-    function ShellController() {
+    ShellController.$inject = ['$scope'];
+    function ShellController($scope) {
         var vm = this;
-        vm.test = '';
+        $scope.test = 'Łuaksz';
 
         activate();
 
         ////////////////
 
         function activate() {
-            vm.test = 'Its alive'
+
         }
 
     }

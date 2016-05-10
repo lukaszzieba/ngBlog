@@ -8,13 +8,18 @@
 </head>
 
 <body>
-     
-     {{ 9 + 4 }}
+    <div ng-include="'./app/layout/shell.html'"></div>
+
+    <!--vendor-->
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-route/angular-route.js"></script>
-    
+
+    <!--app-->
     <script src="./app/app.module.js"></script>
     <script src="./app/app.config.js"></script>
+
+    <!--shell-->
+    <script src="./app/layout/shell.controller.js"></script>   
 </body>
 
 </html>
