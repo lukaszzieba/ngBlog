@@ -13,6 +13,11 @@
                 templateUrl: './app/home/home.html',
                 controller: 'HomeController',
                 controllerAs: 'vm'
+            })
+            .when('/blog', {
+                templateUrl: './app/blog/blog.html',
+                controller: 'BlogController',
+                controllerAs: 'vm'
             });
     }
 })();
