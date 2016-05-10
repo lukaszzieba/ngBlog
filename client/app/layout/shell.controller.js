@@ -5,10 +5,10 @@
         .module('app')
         .controller('ShellController', ShellController);
 
-    ShellController.$inject = ['$scope'];
-    function ShellController($scope) {
+    ShellController.$inject = [];
+    function ShellController() {
         var vm = this;
-        $scope.test = 'Łuaksz';
+        vm.test = 'Łuaksz';
 
         activate();
 

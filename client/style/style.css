@@ -1,0 +1,142 @@
+/*----------------------------------------------------------------------------*/
+
+
+/*IMPORT BOOTSTRAP*/
+
+
+/*----------------------------------------------------------------------------*/
+
+@import url("../bower_components/bootstrap/dist/css/bootstrap.css");
+
+/*----------------------------------------------------------------------------*/
+
+
+/*GENERAL*/
+
+
+/*----------------------------------------------------------------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    /*footer bottom*/
+    position: relative;
+    min-height: 100%;
+}
+body {
+    color: rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    font-size: 22px;
+    /*footer bottom*/
+    margin-bottom: 170px;
+    
+}
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/ngHead.jpg');
+    /*background-image: url('../images/ngHead.jpg');*/
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+/*BOOTSTRAP CLASS OVERRIDE*/
+
+
+/*----------------------------------------------------------------------------*/
+
+.navbar-default .navbar-nav li a:link, .navbar-default .navbar-nav li a:visited {
+    color: #aaaaaa;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    border-bottom: 1px solid;
+    border-bottom-color: rgba(0, 0, 0, 0);
+    transition: 0.4s;
+}
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:active {
+    color: #cfcfcf;
+    border-bottom: 1px solid;
+    border-bottom-color: #cfcfcf;
+}
+.navbar-default {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.4);
+    height: 65px;
+}
+.navbar {
+    border-radius: 0;
+}
+.myContent {
+    color: black;
+}
+.jumbotron {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+
+/*FOOTER*/
+
+
+/*----------------------------------------------------------------------------*/
+footer {
+    /*footer bottom*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 170px;
+    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/footer.png");
+    /*background-image: url("../images/footer.png");*/
+    /*background: url("../images/footer.jpg") top right no-repeat;*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+
+
+    /*background-color: #323232;*/
+    color: #aaaaaa;
+    padding: 40px;
+    font-size: 80%;
+}
+.footer-nav {
+    list-style: node;
+    float: left;
+}
+.social-links {
+    list-style: none;
+    float: right;
+}
+.footer-nav li, .social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.footer-nav li a:link, .footer-nav li a:visited {
+    color: #aaaaaa;
+    transition: 0.4s;
+}
+.footer-nav li a, .footer-nav li a:hover, .footer-nav li a:active {
+    color: #cfcfcf;
+}
+.social-links li a, .social-links li a:link, .social-links li a:visited {
+    color: #aaaaaa;
+}
+.social-links li a:hover, .social-links li a:active {
+    color: #cfcfcf;
+}
+footer p {
+    text-align: center;
+}
+

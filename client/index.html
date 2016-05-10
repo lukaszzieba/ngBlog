@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html ng-app="app">
 
-<head>
-    <meta charset="utf-8">
-    <title>ngBlog</title>
+    <head>
+        <meta charset="utf-8">
+        <title>ngBlog</title>
+        <!-- <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css"> -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic' rel='stylesheet'/>
+        <link rel="stylesheet" type="text/css" href="./style/style.css"/>
+        <link href="./bower_components/components-font-awesome/css/font-awesome.css" type='text/css' rel="stylesheet"/>
+    </head>
 
-</head>
+    <body>
+        <div ng-include="'./app/layout/shell.html'"></div>
 
-<body>
-    <div ng-include="'./app/layout/shell.html'"></div>
+        <!--vendor-->
+        <script src="./bower_components/angular/angular.js"></script>
+        <script src="./bower_components/angular-route/angular-route.js"></script>
 
-    <!--vendor-->
-    <script src="./bower_components/angular/angular.js"></script>
-    <script src="./bower_components/angular-route/angular-route.js"></script>
+        <script src="./bower_components/jquery/dist/jquery.js"></script>
+        <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
-    <!--app-->
-    <script src="./app/app.module.js"></script>
-    <script src="./app/app.config.js"></script>
+        <!--app-->
+        <script src="./app/app.module.js"></script>
+        <script src="./app/app.config.js"></script>
 
-    <!--shell-->
-    <script src="./app/layout/shell.controller.js"></script>   
-</body>
+        <!--shell-->
+        <script src="./app/layout/shell.controller.js"></script>
+    </body>
 
 </html>
