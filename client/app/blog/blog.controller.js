@@ -1,19 +1,31 @@
 (function() {
-'use strict';
+    'use strict';
 
-  angular
-    .module('app')
-    .controller('BlogController', BlogController);
+    angular
+        .module('app')
+        .controller('BlogController', BlogController);
 
-  BlogController.$inject = [''];
-  function BlogController() {
-    var vm = this;
-    
+    BlogController.$inject = ['blogService', '$log'];
 
-    activate();
+    function BlogController(blogService, $log) {
+        var vm = this;
+        vm.blogPosts = [];
 
-    ////////////////
+        activate();
 
-    function activate() { }
-  }
-})();
+        function activate() {
+            return getBlogPosts().then(function() {
+                $log.info("Blog view active!")
+            });
+        }
+
+        function getBlogPosts() {
+            return blogService.getBlogPosts()
+                .then(function(data) {
+                    vm.blogPosts = data;
+                    return vm.blogPosts;
+                });
+        }
+
+    }
+}());
