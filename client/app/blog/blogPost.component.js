@@ -9,8 +9,8 @@
             },
              templateUrl: './app/blog/blog-post.html',
             // template: '<div>Test: {{$ctrl.post.author.name}}</div>',
-            controller: function() {              
-              console.log(this.post);
+            controller: function() {
+              
             }
         });
 }());

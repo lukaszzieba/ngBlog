@@ -1,25 +1,34 @@
-(function () {
+(function() {
     'use strict';
 
     angular
         .module('app')
-        .config(config);
+        .config(config)
+        .run(function($state) {});
 
-    config.$inject = ['$locationProvider', '$routeProvider'];
-    function config($locationProvider, $routeProvder) {
+    config.$inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];
+
+    function config($locationProvider, $stateProvider, $urlRouterProvider) {
         // $locationProvider.html5Mode(true);
-        $routeProvder
-            .when('/', {
+
+        // For any unmatched url, redirect to /state1
+        $urlRouterProvider.otherwise("/home");
+
+        $stateProvider
+            .state('home', {
+                url: "/home",
                 templateUrl: './app/home/home.html',
                 controller: 'HomeController',
                 controllerAs: 'vm'
             })
-            .when('/blog', {
-                templateUrl: './app/blog/blog.html',
+            .state('blog', {
+                url: "/blog",
+                templateUrl: "./app/blog/blog.html",
                 controller: 'BlogController',
                 controllerAs: 'vm'
             })
-            .when('/blog/:id', {
+            .state('blogDeyails', {
+                url: "/blog/:id",
                 templateUrl: './app/blog/blog-post-details.html',
                 controller: 'BlogController',
                 controllerAs: 'vm'

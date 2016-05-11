@@ -5,20 +5,21 @@
         .module('app')
         .controller('BlogController', BlogController);
 
-    BlogController.$inject = ['blogService', '$log', '$routeParams'];
+    BlogController.$inject = ['blogService', '$log', '$stateParams'];
 
-    function BlogController(blogService, $log, $routeParams) {
+    function BlogController(blogService, $log, $stateParams) {
         var vm = this,
-            id = $routeParams.id;
+            id = $stateParams.id;
         vm.blogPosts = [];
         vm.blogPost;
+        console.log('Id: ' + id);
 
         activate();
 
         function activate() {
             if (!id) {
                 return getBlogPosts().then(function() {
-                    $log.info("Blog view active!")
+                    $log.info("Blog view active!");
                 });
             } else {
                 return getBlogPostById().then(function() {
