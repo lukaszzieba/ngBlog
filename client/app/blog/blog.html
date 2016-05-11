@@ -1,6 +1,4 @@
 <div>
     <h1>Blog</h1>
-    <ul>
-      <li ng-repeat="post in vm.blogPosts">{{post.author.name}}</li>
-    </ul>
+    <blog-post ng-repeat="item in vm.blogPosts" post='item'></blog-post>
 </div>
