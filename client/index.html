@@ -12,15 +12,12 @@
     </head>
 
     <body>
-        <div ng-include="'./app/layout/shell.html'">
-            
-        </div>
+        <div ng-include="'./app/layout/shell.html'"></div>
 
         <!--vendor-->
         <script src="./bower_components/angular/angular.js"></script>
         <script src="./bower_components/angular-route/angular-route.js"></script>
         <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-
 
         <script src="./bower_components/jquery/dist/jquery.js"></script>
         <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -39,6 +36,17 @@
         <script src="./app/blog/blog.controller.js"></script>
         <script src="./app/blog/blog.service.js"></script>
         <script src="./app/blog/blogPost.component.js"></script>
+
+        <!-- account -->
+        <script src="./app/account/account.module.js"></script>
+        <script src="./app/account/account.config.js"></script>
+        <script src="./app/account/account.controller.js"></script>
+
+        <!-- admin -->
+        <script src="./app/admin/admin.module.js"></script>
+        <script src="./app/admin/admin.config.js"></script>
+        <script src="./app/admin/admin.controller.js"></script>
+
     </body>
 
 </html>
