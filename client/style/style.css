@@ -137,7 +137,7 @@ footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 170px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/footer.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/pattern.png");
     /*background-image: url("../images/footer.png");*/
     /*background: url("../images/footer.jpg") top right no-repeat;*/
     background-repeat: no-repeat;
