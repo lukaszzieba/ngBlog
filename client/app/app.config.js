@@ -18,6 +18,11 @@
                 templateUrl: './app/blog/blog.html',
                 controller: 'BlogController',
                 controllerAs: 'vm'
+            })
+            .when('/blog/:id', {
+                templateUrl: './app/blog/blog-post-details.html',
+                controller: 'BlogController',
+                controllerAs: 'vm'
             });
     }
 }());

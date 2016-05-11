@@ -5,11 +5,12 @@
         .module('app')
         .factory('blogService', blogService);
 
-    blogService.$inject = ['$q', '$http']
+    blogService.$inject = ['$http']
 
-    function blogService($q, $http) {
+    function blogService($http) {
         var service = {
-            getBlogPosts: getBlogPosts
+            getBlogPosts: getBlogPosts,
+            getBlogPostById: getBlogPostById
         };
 
         return service;
@@ -23,6 +24,19 @@
             }
 
             function getBlogPostsFail(response) {
+                return response;
+            }
+        }
+
+        function getBlogPostById(id) {
+            return $http.get('./data.json')
+                .then(getBlogPostByIdComplete, getBlogPostByIdFail)
+
+            function getBlogPostByIdComplete(response) {
+                return response.data[id];
+            }
+
+            function getBlogPostByIdFail(response) {
                 return response;
             }
         }
