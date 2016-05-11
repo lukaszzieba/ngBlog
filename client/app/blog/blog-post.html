@@ -1,11 +1,17 @@
-<div>
-  <div class="row">
-    {{$ctrl.post.title}}
-  </div>
-  <div class="row">
-    By {{$ctrl.post.author.name}} on {{$ctrl.post.date}}
-  </div>
-  <div class="row">
-    {{$ctrl.post.preview}}
-  </div>
+<div class="blog-post">
+    <a class="blog-post-link" href="#">
+        <div class="row blog-post-title">
+            {{$ctrl.post.title}}
+        </div>
+        <div class="row">
+            {{$ctrl.post.preview}}
+        </div>
+    </a>
+    <div class="row blog-post-author">
+        By
+        {{$ctrl.post.author.name}}
+        on
+        {{$ctrl.post.date}}
+    </div>
+    <hr />
 </div>

@@ -27,14 +27,14 @@ html {
     min-height: 100%;
 }
 body {
-    color: rgb(255, 255, 255);
+    color: rgb(43, 43, 43);
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     text-rendering: optimizeLegibility;
     font-size: 22px;
     /*footer bottom*/
     margin-bottom: 170px;
-    
+
 }
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/ngHead.jpg');
@@ -85,13 +85,34 @@ header {
 }
 
 
-.myContent {
-    color: black;
-}
 .jumbotron {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.blog-post {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+}
+
+.blog-post-link,
+.blog-post-link:link,
+.blog-post-link:active {
+  text-decoration: none;
+  color: rgb(43, 43, 43);
+}
+
+.blog-post-title {
+  font-weight:400;
+  font-size: 2em;
+}
+
+.blog-post-author {
+    margin-top: 10px;
+}
+
+
 
 
 /*----------------------------------------------------------------------------*/
@@ -108,7 +129,7 @@ footer {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 170px;
-    
+
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../images/footer.png");
     /*background-image: url("../images/footer.png");*/
     /*background: url("../images/footer.jpg") top right no-repeat;*/
@@ -151,7 +172,6 @@ footer p {
     text-align: center;
 }
 
-.myContainer { 
+.myContainer {
     color: black;
 }
-
