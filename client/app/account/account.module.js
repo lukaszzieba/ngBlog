@@ -2,5 +2,8 @@
     'use strict';
 
     angular
-        .module('account.module', []);
+        .module('account.module', [
+          'angular-storage',
+          'angular-jwt'
+        ]);
 }());

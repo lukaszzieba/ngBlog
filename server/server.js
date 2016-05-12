@@ -1,10 +1,35 @@
 var express = require('express'),
-    path = require('path'),
-    rootPath = path.normalize(__dirname + '/../'),
-    app = express();
+    bodyParser = require('body-parser'),
+    logger = require('morgan'),
+    jwt = require('express-jwt'),
+    config = require('./config/config.js');
 
-app.use(express.static(rootPath + '/client'));
+var app = express();
 
-app.listen(3000, function () {
-  console.log('Listening on port 3000!');
+app.use(express.static(config.rootPath + '/client'));
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.use(logger('dev'));
+
+app.use(require('./config/routes.js'));
+
+// Public API
+var publicRespnese = 'Puclic responesse ;)'
+app.get('/api/public', function(req, res) {
+    res.status(200).send(publicRespnese);
+});
+
+// Protected API
+var protectedRespnese = 'PROTECTED RESPONSE ;)';
+var jwtCheck = jwt({
+    secret: config.secret
+});
+app.get('/api/protected', jwtCheck, function(req, res) {
+    res.status(200).send(protectedRespnese);
+});
+
+app.listen(config.port, function() {
+    console.log('Listening on port ' + config.port);
 });

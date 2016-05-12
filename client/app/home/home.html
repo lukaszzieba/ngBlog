@@ -5,5 +5,13 @@
         <p>
             <a class="btn btn-primary btn-lg">Learn more</a>
         </p>
+        <button type="button" ng-click="vm.publicApi()" class="btn btn-default">Public api call</button>
+        <p>
+          {{vm.publicApiResponse}}
+        </p>
+        <button type="button" ng-click="vm.protecteApi()" class="btn btn-default">Protected api call</button>
+        <p>
+          {{vm.protectedApiResponse}}
+        </p>
     </div>
 </div>
