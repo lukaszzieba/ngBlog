@@ -7,9 +7,11 @@
             $stateProvider
                 .state('admin', {
                     url: "/admin",
-                    templateUrl: './app/admin/admin.html',
+                    template: '<admin></admin>',
                     controller: 'AdminController',
-                    controllerAs: 'vm'
+                    data: {
+                      requiresLogin: true
+                    }
                 });
         })
 }());
