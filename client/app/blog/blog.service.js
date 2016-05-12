@@ -16,7 +16,7 @@
         return service;
 
         function getBlogPosts() {
-            return $http.get('./data.json')
+            return $http.get('/blog')
                 .then(getBlogPostsComplete, getBlogPostsFail)
 
             function getBlogPostsComplete(response) {
@@ -29,11 +29,11 @@
         }
 
         function getBlogPostById(id) {
-            return $http.get('./data.json')
+            return $http.get('/blog/'+ id)
                 .then(getBlogPostByIdComplete, getBlogPostByIdFail)
 
             function getBlogPostByIdComplete(response) {
-                return response.data[id];
+                return response.data;
             }
 
             function getBlogPostByIdFail(response) {

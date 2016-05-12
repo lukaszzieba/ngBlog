@@ -1,9 +1,19 @@
 var express = require('express'),
     _ = require('lodash'),
     config = require('./config'),
-    jwt = require('jsonwebtoken');
+    jwt = require('jsonwebtoken'),
+    data = require(config.rootPath + '/server/data.json');
 
 var app = express.Router();
+
+app.get('/blog', function(req, res) {
+    res.status(200).send(data);
+});
+
+app.get('/blog/:id', function(req, res) {
+    var post = _.find(data, ['id', parseInt(req.params.id, 10)]);
+    res.status(200).send(post);
+})
 
 // Will be Miongo DB or something else
 var users = [{

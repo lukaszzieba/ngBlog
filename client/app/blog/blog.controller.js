@@ -11,8 +11,7 @@
         var vm = this,
             id = $stateParams.id;
         vm.blogPosts = [];
-        vm.blogPost;
-        console.log('Id: ' + id);
+        vm.blogPost;        
 
         activate();
 
