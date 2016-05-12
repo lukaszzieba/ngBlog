@@ -3,9 +3,9 @@
 
     angular
         .module('account.module')
-        .controller('AccountController', AccountController);
+        .controller('RegisterController', RegisterController);
 
-    function AccountController() {
+    function RegisterController() {
         var vm = this;
 
         activate();

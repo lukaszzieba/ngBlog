@@ -11,15 +11,14 @@
         $stateProvider
             .state('login', {
                 url: "/login",
-                templateUrl: './app/account/login.html',
-                controller: 'AccountController',
-                controllerAs: 'vm'
+                template: '<login></login>',
+                // component: 'login'
             })
-            .state('signup', {
-                url: "/signup",
-                templateUrl: './app/account/signup.html',
-                controller: 'AccountController',
-                controllerAs: 'vm'
+            .state('register', {
+              url: '/register',
+              template: '<register></register>',
+              // component: 'register'
+
             });
     }
 }());
