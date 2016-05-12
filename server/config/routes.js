@@ -5,6 +5,7 @@ var express = require('express'),
     data = require(config.rootPath + '/server/data.json');
 
 var app = express.Router();
+var token;
 
 app.get('/blog', function(req, res) {
     res.status(200).send(data);
@@ -13,6 +14,23 @@ app.get('/blog', function(req, res) {
 app.get('/blog/:id', function(req, res) {
     var post = _.find(data, ['id', parseInt(req.params.id, 10)]);
     res.status(200).send(post);
+});
+
+app.post('/create', function(req, res) {
+    if (req.body.post) {
+        var post = req.body.post;
+        post.id = _.maxBy(data, function(item) {
+            return item.id;
+        }).id + 1;
+        post.date = Date.now();
+        var decoded = jwt.verify(token, config.secret);
+        console.log(decoded);
+        console.log(decoded.email);
+        post.author = {name: '', lastname: ''};
+        post.author.name =  decoded.email;
+        data.push(post);
+        res.status(200).send('Create complete');
+    }
 })
 
 // Will be Miongo DB or something else
@@ -23,9 +41,12 @@ var users = [{
 }];
 
 function createToken(user) {
-    return jwt.sign(_.omit(user, 'password'), config.secret, {
+    token = jwt.sign(_.omit(user, 'password'), config.secret, {
         expiresIn: 9000000
     });
+    console.log('On token create:');
+    console.log(token);
+    return token;
 }
 
 app.post('/register', function(req, res) {

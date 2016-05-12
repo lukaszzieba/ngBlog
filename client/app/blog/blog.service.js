@@ -10,7 +10,8 @@
     function blogService($http) {
         var service = {
             getBlogPosts: getBlogPosts,
-            getBlogPostById: getBlogPostById
+            getBlogPostById: getBlogPostById,
+            createPost: createPost
         };
 
         return service;
@@ -23,21 +24,36 @@
                 return response.data;
             }
 
-            function getBlogPostsFail(response) {
-                return response;
+            function getBlogPostsFail(err) {
+                return err;
             }
         }
 
         function getBlogPostById(id) {
-            return $http.get('/blog/'+ id)
+            return $http.get('/blog/' + id)
                 .then(getBlogPostByIdComplete, getBlogPostByIdFail)
 
             function getBlogPostByIdComplete(response) {
                 return response.data;
             }
 
-            function getBlogPostByIdFail(response) {
-                return response;
+            function getBlogPostByIdFail(err) {
+                return err;
+            }
+        }
+
+        function createPost(post) {
+            return $http.post('/create', {
+                    post
+                })
+                .then(createPostComplete, createPostFail);
+
+            function createPostComplete(response) {
+                return response.data;
+            }
+
+            function createPostFail(err) {
+                return err;
             }
         }
     }
