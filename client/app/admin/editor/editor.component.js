@@ -5,6 +5,7 @@
         .module('admin.module')
         .component('editor', {
             bindings: {},
-            template: '<h1>Editor</h1>'          
+            templateUrl: './app/admin/editor/editor.html',
+            controller: 'EditorController'       
         });
 }());

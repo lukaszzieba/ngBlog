@@ -5,6 +5,6 @@
         .module('admin.module')
         .component('dashboard', {
             bindings: {},
-            template: '<h1>Dashboard</h1>'          
+            templateUrl: './app/admin/dashboard/dashboard.html'
         });
 }());
