@@ -7,12 +7,25 @@
             $stateProvider
                 .state('admin', {
                     url: "/admin",
-                    // template: '<admin></admin>',
-                    templateUrl: './app/admin/admin.html',
-                    controller: 'AdminController',
+                    template: '<admin></admin>',
+                    data: {
+                      requiresLogin: true
+                    }
+                })
+                .state('admin.dashboard', {
+                    url: "/dashboard",
+                    template: '<dashboard></dashboard>',
+                    data: {
+                      requiresLogin: true
+                    }
+                })
+                .state('admin.editor', {
+                    url: "/editor",
+                    template: '<editor></editor>',
                     data: {
                       requiresLogin: true
                     }
                 });
+
         })
 }());
