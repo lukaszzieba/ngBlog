@@ -14,8 +14,7 @@
             {{vm.blogPost.date}}
         </div>
         <hr/>
-        <div class="row blog-post-content">
-            {{vm.blogPost.content}}
+        <div ng-bind-html="vm.blogPost.content" class="row blog-post-content">
         </div>
     </div>
 </div>

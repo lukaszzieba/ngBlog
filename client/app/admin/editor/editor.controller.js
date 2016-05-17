@@ -9,20 +9,23 @@
 
     function EditorController($sce, blogService) {
         var vm = this;
-
-        // vm.create = function(post) {
-        //     console.log(post.content);
-        //     blogService.createPost(post)
-        //         .then(function(response) {
-        //
-        //         });
-        // };
-
+        vm.post = {};
         CKEDITOR.replace('content');
+
         $('#submitButton').click(function(e) {
             var editorData = CKEDITOR.instances.content.getData();
-            console.log(editorData);
+
+            var postToCreate = {};
+            postToCreate.title = vm.post.title;
+            postToCreate.preview = vm.post.preview;
+            postToCreate.content = editorData;
+
+            blogService.createPost(postToCreate)
+                .then(function(response) {
+
+                });
         });
+
 
         activate();
 
