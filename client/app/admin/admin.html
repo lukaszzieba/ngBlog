@@ -1,10 +1,13 @@
-<h2>Admin Main page</h2>
-<ul>
-    <li>
-        <a ui-sref="admin.dashboard">Dashboard</a>
-    </li>
-    <li>
-        <a ui-sref="admin.editor">Editorl</a>
-    </li>
-</ul>
-<div ui-view></div>
+<div class="row">
+  <div class="col-md-2 col-md-offset-1">
+    <ul class="side-menu">
+        <li>
+            <a ui-sref="admin.dashboard">Dashboard</a>
+        </li>
+        <li>
+            <a ui-sref="admin.editor">Editorl</a>
+        </li>
+    </ul>
+  </div>
+  <div class="col-md-8" ui-view></div>
+</div>

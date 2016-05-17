@@ -43,11 +43,11 @@ header {
     height: 300px;
 }
 form {
-  margin-bottom: 40px;
-  font-size: 0.8em;
+    margin-bottom: 40px;
+    font-size: 0.8em;
 }
 .test {
-  color: red;
+    color: red;
 }
 
 /*----------------------------------------------------------------------------*/
