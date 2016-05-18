@@ -9,16 +9,15 @@ module.exports = function(grunt) {
             },
             app: {
                 files: {
-                    'client/js/min-safe/appModule.js': ['client/app/*.module.js', 'client/app/*.config.js'],
-                    'client/js/min-safe/simpleModule.js': ['client/app/**/*.module.js', 'client/app/**/*.config.js', 'client/app/**/*js'],
-                    'client/js/min-safe/nestedModule.js': ['client/app/**/**/*.module.js', 'client/app/**/**/*.config.js', 'client/app/**/**/*js']
+                    'client/dist/min-safe/appModule.js': ['client/app/*.module.js', 'client/app/*.config.js'],
+                    'client/dist/min-safe/dependencyModules.js': ['client/app/**/*.module.js', 'client/app/**/*.config.js', 'client/app/**/*.js']
                 }
             }
         },
         concat: {
             js: { //target
-                src: ['client/js/min-safe/appModule.js', 'client/js/min-safe/simpleModule.js', 'client/js/min-safe/nestedModule.js'],
-                dest: 'client/js/min-safe/app.js'
+                src: ['client/dist/min-safe/appModule.js', 'client/dist/min-safe/dependencyModules.js'],
+                dest: 'client/dist/min-safe/app.js'
             }
         },
         uglify: {
@@ -28,8 +27,8 @@ module.exports = function(grunt) {
                 except: ['jQuery', 'angular']
             },
             build: {
-                src: ['client/js/min-safe/app.js'],
-                dest: 'client/js/script.min.js'
+                src: ['client/dist/min-safe/app.js'],
+                dest: 'client/dist/app.min.js'
             }
         }
     });
