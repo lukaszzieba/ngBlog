@@ -1,0 +1,46 @@
+module.exports = function(grunt) {
+
+    // Config tasts
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        ngAnnotate: {
+            options: {
+                singleQuotes: true
+            },
+            app: {
+                files: {
+                    'client/js/min-safe/appModule.js': ['client/app/*.module.js', 'client/app/*.config.js'],
+                    'client/js/min-safe/simpleModule.js': ['client/app/**/*.module.js', 'client/app/**/*.config.js', 'client/app/**/*js'],
+                    'client/js/min-safe/nestedModule.js': ['client/app/**/**/*.module.js', 'client/app/**/**/*.config.js', 'client/app/**/**/*js']
+                }
+            }
+        },
+        concat: {
+            js: { //target
+                src: ['client/js/min-safe/appModule.js', 'client/js/min-safe/simpleModule.js', 'client/js/min-safe/nestedModule.js'],
+                dest: 'client/js/min-safe/app.js'
+            }
+        },
+        uglify: {
+            options: {
+                beautify: false,
+                mangle: false,
+                except: ['jQuery', 'angular']
+            },
+            build: {
+                src: ['client/js/min-safe/app.js'],
+                dest: 'client/js/script.min.js'
+            }
+        }
+    });
+
+    // Load the plugins
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-ng-annotate');
+
+
+    // Register tasks
+    grunt.registerTask('default', ['ngAnnotate', 'concat', 'uglify:build']);
+
+};

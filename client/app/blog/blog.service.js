@@ -44,9 +44,8 @@
 
         function createPost(post) {
             return $http.post('/create', {
-                    post
-                })
-                .then(createPostComplete, createPostFail);
+                post: post
+            }).then(createPostComplete, createPostFail);
 
             function createPostComplete(response) {
                 return response.data;

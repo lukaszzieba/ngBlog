@@ -3,28 +3,32 @@
 
     angular
         .module('admin.module')
-        .config(function($stateProvider) {
-            $stateProvider
-                .state('admin', {
-                    url: "/admin",
-                    template: '<admin></admin>',
-                    data: {
-                        requiresLogin: true
-                    }
-                })
-                .state('admin.dashboard', {
-                    url: "/dashboard",
-                    template: '<dashboard></dashboard>',
-                    data: {
-                        requiresLogin: true
-                    }
-                })
-                .state('admin.editor', {
-                    url: "/editor",
-                    template: '<editor></editor>',
-                    data: {
-                        requiresLogin: true
-                    }
-                });
-        });
+        .config(config);
+
+    config.$inject = ['$stateProvider'];
+
+    function config($stateProvider) {
+        $stateProvider
+            .state('admin', {
+                url: "/admin",
+                template: '<admin></admin>',
+                data: {
+                    requiresLogin: true
+                }
+            })
+            .state('admin.dashboard', {
+                url: "/dashboard",
+                template: '<dashboard></dashboard>',
+                data: {
+                    requiresLogin: true
+                }
+            })
+            .state('admin.editor', {
+                url: "/editor",
+                template: '<editor></editor>',
+                data: {
+                    requiresLogin: true
+                }
+            });
+    }
 }());

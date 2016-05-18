@@ -7,10 +7,7 @@
             bindings: {
                 post: '='
             },
-             templateUrl: './app/blog/blog-post.html',
+             templateUrl: './app/blog/blog-post.html'
             // template: '<div>Test: {{$ctrl.post.author.name}}</div>',
-            controller: function() {
-              
-            }
         });
 }());
