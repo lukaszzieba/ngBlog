@@ -2,11 +2,13 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     logger = require('morgan'),
     jwt = require('express-jwt'),
-    config = require('./config/config.js');
+    config = require('./config/config.js'),
+    favicon = require('serve-favicon');
 
 var app = express();
 
 app.use(express.static(config.rootPath + '/client'));
+app.use(favicon(config.rootPath + '/client/images/favicon.png'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
