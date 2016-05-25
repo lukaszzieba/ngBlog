@@ -5,9 +5,9 @@
         .module('admin.module')
         .controller('EditorController', EditorController);
 
-    EditorController.$inject = ['$sce', 'blogService']
+    EditorController.$inject = ['$sce', 'blogService', 'toastr']
 
-    function EditorController($sce, blogService) {
+    function EditorController($sce, blogService, toastr) {
         var vm = this;
         vm.post = {};
         CKEDITOR.replace('content');
@@ -22,7 +22,12 @@
 
             blogService.createPost(postToCreate)
                 .then(function(response) {
-
+                    toastr.success('Post create success.', 'Success');
+                    vm.post.title = '';
+                    vm.post.preview = '';
+                    CKEDITOR.instances.content.setData('');
+                }, function(error) {
+                    toastr.error('Cost create failed.', 'Error');
                 });
         });
 

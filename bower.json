@@ -14,6 +14,7 @@
     "angular-ui-router": "^0.2.18",
     "angular-jwt": "^0.0.9",
     "a0-angular-storage": "^0.0.15",
-    "angular-sanitize": "^1.5.5"
+    "angular-sanitize": "^1.5.5",
+    "angular-animate": "^1.5.5"
   }
 }

@@ -6,6 +6,8 @@
         <meta charset="utf-8">
         <title>ngBlog</title>
         <!-- <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.css"> -->
+        <!-- toastr test -->
+        <link rel="stylesheet" href="https://npmcdn.com/angular-toastr/dist/angular-toastr.css"/>
         <link href='https://fonts.googleapis.com/css?family=Lato:400,300,400italic' rel='stylesheet'/>
         <link rel="stylesheet" type="text/css" href="./style/style.css"/>
         <link href="./bower_components/components-font-awesome/css/font-awesome.css" type='text/css' rel="stylesheet"/>
@@ -17,6 +19,9 @@
         <!--vendor-->
         <script src="./bower_components/angular/angular.min.js"></script>
         <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="./bower_components/angular-animate/angular-animate.js"></script>
+        <!-- toastr test -->
+        <script src="https://npmcdn.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
         <script src="./bower_components/jquery/dist/jquery.min.js"></script>
         <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -29,7 +34,41 @@
         <script src="./ckeditor/ckeditor.js"></script>
 
         <!--my sctipt -->
-        <script src="./dist/app.min.js"></script>
+        <!-- <script src="./dist/app.min.js"></script> -->
+
+        <!--app-->
+        <script src="./app/app.module.js"></script>
+        <script src="./app/app.config.js"></script>
+
+        <!--shell-->
+        <script src="./app/layout/shell.controller.js"></script>
+
+        <!--home-->
+        <script src="./app/home/home.controller.js"></script>
+
+        <!-- blog -->
+        <script src="./app/blog/blog.controller.js"></script>
+        <script src="./app/blog/blog.service.js"></script>
+        <script src="./app/blog/blogPost.component.js"></script>
+
+        <!-- account -->
+        <script src="./app/account/account.module.js"></script>
+        <script src="./app/account/account.config.js"></script>
+        <script src="./app/account/login/login.component.js"></script>
+        <script src="./app/account/login/login.controller.js"></script>
+        <script src="./app/account/register/register.component.js"></script>
+        <script src="./app/account/register/register.controller.js"></script>
+
+        <!-- admin -->
+        <script src="./app/admin/admin.module.js"></script>
+        <script src="./app/admin/admin.config.js"></script>
+        <script src="./app/admin/admin.component.js"></script>
+        <script src="./app/admin/admin.controller.js"></script>
+
+        <script src="./app/admin/dashboard/dashboard.component.js"></script>
+
+        <script src="./app/admin/editor/editor.component.js"></script>
+        <script src="./app/admin/editor/editor.controller.js"></script>
     </body>
 
 </html>
