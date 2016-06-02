@@ -24,7 +24,7 @@
                 url: "/blog",
                 template: '<blog></blog>'
             })
-            .state('blogDeyails', {
+            .state('blogDetails', {
                 url: "/blog/:id",
                 template: '<blog-post-details></blog-post-details>'
             });
