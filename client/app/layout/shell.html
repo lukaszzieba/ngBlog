@@ -1,11 +1,11 @@
-<div ng-controller="ShellController as vm">
+<div>
     <header>
-        <div ng-include="'./app/layout/nav-bar.html'"></div>
+        <nav-bar></nav-bar>
     </header>
 
-    <div class="container">        
+    <div class="container">
         <ui-view></ui-view>
     </div>
 
-    <div ng-include="'./app/layout/footer.html'"></div>
+    <foot></foot>
 </div>

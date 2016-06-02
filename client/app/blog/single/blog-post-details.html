@@ -1,20 +1,20 @@
 <div class="col-md-10 col-md-offset-1">
     <div class="blog-post">
         <div class="row blog-post-title">
-            {{vm.blogPost.title}}
+            {{$ctrl.blogPost.title}}
         </div>
         <div class="row">
-            {{vm.blogPost.preview}}
+            {{$ctrl.blogPost.preview}}
         </div>
 
         <div class="row blog-post-author">
             By
-            {{vm.blogPost.author.name}}
+            {{$ctrl.blogPost.author.name}}
             on
-            {{vm.blogPost.date}}
+            {{$ctrl.blogPost.date}}
         </div>
         <hr/>
-        <div ng-bind-html="vm.blogPost.content" class="row blog-post-content">
+        <div ng-bind-html="$ctrl.blogPost.content" class="row blog-post-content">
         </div>
     </div>
 </div>

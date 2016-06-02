@@ -13,8 +13,8 @@
         <link href="./bower_components/components-font-awesome/css/font-awesome.css" type='text/css' rel="stylesheet"/>
     </head>
 
-    <body>
-        <div ng-include="'./app/layout/shell.html'"></div>
+    <body>        
+        <shell></shell>
 
         <!--vendor-->
         <script src="./bower_components/angular/angular.min.js"></script>
@@ -42,15 +42,21 @@
         <script src="./app/app.config.js"></script>
 
         <!--shell-->
+        <script src="./app/layout/shell.component.js"></script>
         <script src="./app/layout/shell.controller.js"></script>
+        <script src="./app/layout/nav/navBar.component.js"></script>
+        <script src="./app/layout/foot/footer.component.js"></script>
 
         <!--home-->
+        <script src="./app/home/home.component.js"></script>
         <script src="./app/home/home.controller.js"></script>
 
         <!-- blog -->
+        <script src="./app/blog/blog.component.js"></script>
         <script src="./app/blog/blog.controller.js"></script>
         <script src="./app/blog/blog.service.js"></script>
-        <script src="./app/blog/blogPost.component.js"></script>
+        <script src="./app/blog/all/blogPost.component.js"></script>
+        <script src="./app/blog/single/blogPostDetails.component.js"></script>
 
         <!-- account -->
         <script src="./app/account/account.module.js"></script>

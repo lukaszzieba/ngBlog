@@ -18,21 +18,15 @@
         $stateProvider
             .state('home', {
                 url: "/home",
-                templateUrl: './app/home/home.html',
-                controller: 'HomeController',
-                controllerAs: 'vm'
+                template: '<home></home>'
             })
             .state('blog', {
                 url: "/blog",
-                templateUrl: "./app/blog/blog.html",
-                controller: 'BlogController',
-                controllerAs: 'vm'
+                template: '<blog></blog>'
             })
             .state('blogDeyails', {
                 url: "/blog/:id",
-                templateUrl: './app/blog/blog-post-details.html',
-                controller: 'BlogController',
-                controllerAs: 'vm'
+                template: '<blog-post-details></blog-post-details>'
             });
     }
     run.$inject = ['$state'];

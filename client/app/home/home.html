@@ -1,17 +1,17 @@
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello, world! {{ vm.name}}</h1>
+        <h1>Hello, world! {{ $ctrl.name}}</h1>
         <p>Contents ...</p>
         <p>
             <a class="btn btn-primary btn-lg">Learn more</a>
         </p>
-        <button type="button" ng-click="vm.publicApi()" class="btn btn-default">Public api call</button>
+        <button type="button" ng-click="$ctrl.publicApi()" class="btn btn-default">Public api call</button>
         <p>
-          {{vm.publicApiResponse}}
+          {{$ctrl.publicApiResponse}}
         </p>
-        <button type="button" ng-click="vm.protecteApi()" class="btn btn-default">Protected api call</button>
+        <button type="button" ng-click="$ctrl.protecteApi()" class="btn btn-default">Protected api call</button>
         <p>
-          {{vm.protectedApiResponse}}
+          {{$ctrl.protectedApiResponse}}
         </p>
     </div>
 </div>
